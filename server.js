@@ -179,7 +179,7 @@ app.get('/user/:userId', async (req, res) => {
 // ─────────────────────────────────────────────
 // START THE SERVER on port 3000
 // ─────────────────────────────────────────────
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`\nPreetlytics API running at http://localhost:${PORT}`);
   console.log('─────────────────────────────────');
