@@ -18,11 +18,12 @@ app.use(express.json());  // allow the API to read JSON from requests
 // ─────────────────────────────────────────────
 
 const db = new Pool({
-  host:     'localhost',      // PostgreSQL is on your own machine
-  port:     5432,             // default PostgreSQL port
-  database: 'preetlytics',    // the database you created in pgAdmin
-  user:     'postgres',       // default PostgreSQL user
-  password: 'Rep0rting@111' // Set your PostgreSQL password here
+  host:     process.env.DB_HOST,
+  port:     process.env.DB_PORT,
+  database: process.env.DB_NAME,
+  user:     process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  ssl: { rejectUnauthorized: false }
 });
 
 // ─────────────────────────────────────────────
